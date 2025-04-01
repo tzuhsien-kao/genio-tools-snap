@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="img/MediaTek_20Genio_White_20Vertical_200222.png" alt="Mediatek Genio Tools">
+  <img src="img/MediaTek_20Genio_Black_20Vertical_200222.png" alt="Mediatek Genio Tools">
   <br />
   Mediatek Genio Tools
 </h1>
