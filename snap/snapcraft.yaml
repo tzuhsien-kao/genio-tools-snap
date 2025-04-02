@@ -4,6 +4,10 @@ summary: Mediatek Genio Tools
 description: |
   Flash, control or configure MediaTek boards, and in particular the Genio evaluation kits
 
+architectures:
+  - build-on: amd64
+  - build-on: arm64
+
 license: MIT
 adopt-info: genio-tools
 
