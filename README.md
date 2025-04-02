@@ -27,7 +27,7 @@ distributions.</p>
 
 ## Install
 
-    sudo snap install mediatek-genio-tools
+    sudo snap install genio-tools
 
 <!-- Uncomment and modify this when your snap is available on the store
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/my-snap-name)

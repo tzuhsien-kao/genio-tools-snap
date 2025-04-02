@@ -1,11 +1,11 @@
-name: mediatek-genio-tools
+name: genio-tools
 version: git
 summary: genio-tools
 description: |
   Flash, control or configure MediaTek boards, and in particular the Genio evaluation kits
 
 license: MIT
-adopt-info: meditek-genio-tools
+adopt-info: genio-tools
 
 confinement: classic
 base: core22
@@ -16,7 +16,7 @@ environment:
   LD_LIBRARY_PATH: $SNAP/usr/lib:$SNAP/lib
 
 parts:
-  meditek-genio-tools:
+  genio-tools:
     plugin: python
     source: https://gitlab.com/mediatek/aiot/bsp/genio-tools.git
     source-type: git
