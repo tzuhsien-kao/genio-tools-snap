@@ -40,7 +40,6 @@ distributions.</p>
 After installing the snap, you must connect the following interfaces manually:
 
     sudo snap connect genio-tools:raw-usb :raw-usb
-    sudo snap connect genio-tools:serial-port :serial-port
     sudo snap connect genio-tools:adb-support :adb-support
     sudo snap connect genio-tools:network-observe :network-observe
 

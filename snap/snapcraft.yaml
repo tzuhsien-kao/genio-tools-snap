@@ -51,8 +51,6 @@ plugs:
     interface: raw-usb
   network-observe:
     interface: network-observe
-  serial-port:
-    interface: serial-port
   adb-support:
     interface: adb-support
 
