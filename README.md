@@ -35,6 +35,16 @@ distributions.</p>
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
+## 🔌 Required Interface Connections
+
+After installing the snap, you must connect the following interfaces manually:
+
+    sudo snap connect genio-tools:raw-usb :raw-usb
+    sudo snap connect genio-tools:serial-port :serial-port
+    sudo snap connect genio-tools:adb-support :adb-support
+    sudo snap connect genio-tools:network-observe :network-observe
+
+
 ## Remaining tasks
 
 Snapcrafters ([join us](https://forum.snapcraft.io/t/snapcrafters-reboot/24625)) are working to land snap install documentation and the [snapcraft.yaml](https://github.com/snapcrafters/fork-and-rename-me/blob/master/snap/snapcraft.yaml) upstream so Mediatek Genio Tools can authoritatively publish future releases.
