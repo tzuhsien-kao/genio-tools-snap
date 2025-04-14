@@ -22,8 +22,11 @@ jobs:
         with:
           token: ${{ secrets.SNAPCRAFTERS_BOT_COMMIT }}
           update-script: |
-            echo "Change me!"
-            # This should be a script that looks for a new upstream version, and modifies the
-            # snapcraft.yaml accordingly. For examples, take a look at:
-            # - https://github.com/snapcrafters/mattermost-desktop/blob/candidate/.github/workflows/sync-version-with-upstream.yml
-            # - https://github.com/snapcrafters/discord/blob/candidate/.github/workflows/sync-version-with-upstream.yml
+            # Project ID for genio-tools upstream is from GitLab API: https://gitlab.com/api/v4/projects/mediatek%2Faiot%2Fbsp%2Fgenio-tools
+            GITLAB_API="https://gitlab.com/api/v4/projects/45680472/repository/tags"
+            
+            # Fetch the latest tag/version from GitLab API
+            VERSION=$(curl -s "${GITLAB_API}" | jq -r '.[0].name')
+
+            # Update the version in the snapcraft.yaml file
+            sed -i 's/^\(version: \).*$/\1'"$VERSION"'/' snap/snapcraft.yaml
