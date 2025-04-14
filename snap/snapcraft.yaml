@@ -4,17 +4,6 @@ summary: Mediatek Genio Tools
 description: |
   Flash, control or configure MediaTek boards, and in particular the Genio evaluation kits
 
-  ⚠️ Manual Permissions Required
-  After installing, run the following commands to enable device access:
-
-    sudo snap connect genio-tools:raw-usb :raw-usb
-    sudo snap connect genio-tools:serial-port :serial-port
-    sudo snap connect genio-tools:adb-support :adb-support
-    sudo snap connect genio-tools:network-observe :network-observe
-  
-  For udev and serial configuration, please refer to Mediatek Genio Tools documents:
-  https://mediatek.gitlab.io/aiot/doc/aiot-dev-guide/master/tools/genio-tools.html
-
 architectures:
   - build-on: amd64
   - build-on: arm64
