@@ -45,24 +45,24 @@ parts:
       - enable-patchelf
 
 plugs:
-  home:
-    interface: home
-  raw-usb:
-    interface: raw-usb
-  network-observe:
-    interface: network-observe
   adb-support:
     interface: adb-support
+  home:
+    interface: home
+  network-observe:
+    interface: network-observe
+  raw-usb:
+    interface: raw-usb
   system-files:
     interface: system-files
     read:
       - /etc/udev/rules.d/72-aiot.rules
 
-
 apps:
   genio-flash:
     command: bin/genio-flash
     plugs:
+      - adb-support
       - raw-usb
   genio-config:
     command: bin/genio-config
@@ -73,7 +73,9 @@ apps:
     plugs:
       - adb-support
       - network-observe
+      - raw-usb
   genio-multi-download-cli:
     command: bin/genio-multi-download-cli
     plugs:
+      - adb-support
       - raw-usb
