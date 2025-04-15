@@ -62,6 +62,7 @@ apps:
     plugs:
       - adb-support
       - raw-usb
+      - hardware-observe
   genio-config:
     command: bin/genio-config
     plugs:
@@ -72,8 +73,10 @@ apps:
       - adb-support
       - network-observe
       - raw-usb
+      - hardware-observe
   genio-multi-download-cli:
     command: bin/genio-multi-download-cli
     plugs:
       - adb-support
       - raw-usb
+      - hardware-observe
