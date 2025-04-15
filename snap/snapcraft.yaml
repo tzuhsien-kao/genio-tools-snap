@@ -53,13 +53,27 @@ plugs:
     interface: network-observe
   adb-support:
     interface: adb-support
+  system-files:
+    interface: system-files
+    read:
+      - /etc/udev/rules.d/72-aiot.rules
+
 
 apps:
   genio-flash:
     command: bin/genio-flash
+    plugs:
+      - raw-usb
   genio-config:
     command: bin/genio-config
+    plugs:
+      - system-files
   genio-board:
     command: bin/genio-board
+    plugs:
+      - adb-support
+      - network-observe
   genio-multi-download-cli:
     command: bin/genio-multi-download-cli
+    plugs:
+      - raw-usb
