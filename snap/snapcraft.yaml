@@ -53,10 +53,8 @@ plugs:
     interface: network-observe
   raw-usb:
     interface: raw-usb
-  system-files:
-    interface: system-files
-    read:
-      - /etc/udev/rules.d/72-aiot.rules
+  hardware-observe:
+    interface: hardware-observe
 
 apps:
   genio-flash:
@@ -67,7 +65,7 @@ apps:
   genio-config:
     command: bin/genio-config
     plugs:
-      - system-files
+      - hardware-observe
   genio-board:
     command: bin/genio-board
     plugs:

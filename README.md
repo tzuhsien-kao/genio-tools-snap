@@ -42,7 +42,7 @@ After installing the snap, you must connect the following interfaces manually:
     sudo snap connect genio-tools:raw-usb :raw-usb
     sudo snap connect genio-tools:adb-support :adb-support
     sudo snap connect genio-tools:network-observe :network-observe
-    sudo snap connect genio-tools:system-files :system-files
+    sudo snap connect genio-tools:hardware-observe :hardware-observe
 
 ## Remaining tasks
 
