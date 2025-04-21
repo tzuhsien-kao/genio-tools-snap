@@ -45,8 +45,6 @@ parts:
       - enable-patchelf
 
 plugs:
-  adb-support:
-    interface: adb-support
   home:
     interface: home
   network-observe:
@@ -60,7 +58,6 @@ apps:
   genio-flash:
     command: bin/genio-flash
     plugs:
-      - adb-support
       - raw-usb
       - hardware-observe
   genio-config:
@@ -70,13 +67,11 @@ apps:
   genio-board:
     command: bin/genio-board
     plugs:
-      - adb-support
       - network-observe
       - raw-usb
       - hardware-observe
   genio-multi-download-cli:
     command: bin/genio-multi-download-cli
     plugs:
-      - adb-support
       - raw-usb
       - hardware-observe
