@@ -43,6 +43,12 @@ parts:
       - python3.10-minimal
     build-attributes:
       - enable-patchelf
+    
+  genio-setup:
+    plugin: dump
+    source: ./scripts
+    organize:
+      setup.sh: bin/setup.sh
 
 plugs:
   home:
@@ -58,20 +64,29 @@ apps:
   genio-flash:
     command: bin/genio-flash
     plugs:
+      - home
       - raw-usb
       - hardware-observe
   genio-config:
     command: bin/genio-config
     plugs:
+      - home
       - hardware-observe
   genio-board:
     command: bin/genio-board
     plugs:
+      - home
       - network-observe
       - raw-usb
       - hardware-observe
   genio-multi-download-cli:
     command: bin/genio-multi-download-cli
     plugs:
+      - home
       - raw-usb
       - hardware-observe
+  
+  setup:
+    command: bin/setup.sh
+    plugs:
+      - home

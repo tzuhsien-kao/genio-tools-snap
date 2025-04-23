@@ -35,13 +35,16 @@ distributions.</p>
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
-## 🔌 Required Interface Connections
+## 🔌 Required Interface Connections & Udev Setup
 
-After installing the snap, you must connect the following interfaces manually:
+After installing the snap, run the setup app to generate a setting up script:
 
-    sudo snap connect genio-tools:raw-usb :raw-usb
-    sudo snap connect genio-tools:network-observe :network-observe
-    sudo snap connect genio-tools:hardware-observe :hardware-observe
+    snap run genio-tools.setup
+
+Configure required interface connections & Install USB udev rules:
+
+    sudo bash ~/.config/genio-tools/install.sh
+
 
 ## Remaining tasks
 
