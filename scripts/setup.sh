@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CONFIG_DIR="$HOME/.config/genio-tools"
-INSTALL_SCRIPT="$CONFIG_DIR/install.sh"
+CONFIG_DIR="$HOME/common"
+INSTALL_SCRIPT="$CONFIG_DIR/install-udev-rules.sh"
 
 mkdir -p "$CONFIG_DIR"
 
