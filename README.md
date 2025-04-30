@@ -35,13 +35,13 @@ distributions.</p>
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
-## 🔌 Required Interface Connections & Udev Setup
+## 🔌 Udev Setup
 
 After installing the snap, run the setup app to generate a setting up script:
 
     snap run genio-tools.setup
 
-Configure required interface connections & Install USB udev rules:
+Install Genio USB udev rules:
 
     sudo bash ~/.config/genio-tools/install.sh
 

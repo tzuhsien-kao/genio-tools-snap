@@ -8,11 +8,6 @@ mkdir -p "$CONFIG_DIR"
 cat > "$INSTALL_SCRIPT" <<'EOF'
 #!/bin/bash
 
-echo "🔗 Connecting required snap interfaces..."
-sudo snap connect genio-tools:raw-usb :raw-usb
-sudo snap connect genio-tools:network-observe :network-observe
-sudo snap connect genio-tools:hardware-observe :hardware-observe
-
 RULE_FILE="/etc/udev/rules.d/72-aiot.rules"
 
 echo "🔧 Installing udev rule for your USB device..."
@@ -32,5 +27,5 @@ EOF
 chmod +x "$INSTALL_SCRIPT"
 
 echo "✅ install.sh has been created at $INSTALL_SCRIPT"
-echo "🎯 Please run the following command manually to apply the udev rules and connect required interfaces:"
+echo "🎯 Please run the following command manually to apply the udev rules:"
 echo "sudo bash $INSTALL_SCRIPT"
