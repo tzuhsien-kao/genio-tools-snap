@@ -35,17 +35,6 @@ distributions.</p>
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
-## 🔌 Udev Setup
-
-After installing the snap, run the setup app to generate a setting up script:
-
-    snap run genio-tools.setup
-
-Install Genio USB udev rules:
-
-    sudo bash ~/.config/genio-tools/install.sh
-
-
 ## Remaining tasks
 
 Snapcrafters ([join us](https://forum.snapcraft.io/t/snapcrafters-reboot/24625)) are working to land snap install documentation and the [snapcraft.yaml](https://github.com/snapcrafters/fork-and-rename-me/blob/master/snap/snapcraft.yaml) upstream so Mediatek Genio Tools can authoritatively publish future releases.
