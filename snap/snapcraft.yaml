@@ -4,19 +4,19 @@ summary: Mediatek Genio Tools
 description: |
   Flash, control or configure MediaTek boards, and in particular the Genio evaluation kits
 
-architectures:
-  - build-on: amd64
-  - build-on: arm64
+platforms:
+  amd64:
+  arm64:
 
 license: MIT
 adopt-info: genio-tools
 
 confinement: strict
-base: core22
+base: core24
 
 environment:
   PATH: $SNAP/usr/bin:$SNAP/bin:$SNAP/sbin:$PATH
-  PYTHONPATH: $SNAP/lib/python3.10/site-packages:$PYTHONPATH
+  PYTHONPATH: $SNAP/lib/python3.12/site-packages:$PYTHONPATH
   LD_LIBRARY_PATH: $SNAP/usr/lib:$SNAP/lib
 
 parts:
@@ -28,9 +28,6 @@ parts:
     override-pull: |
       craftctl default
       craftctl set version="$(git describe --tags --always)"
-    override-build: |
-      python3 setup.py install
-      snapcraftctl build
     build-packages:
       - python3-setuptools
       - python3-setuptools-scm
@@ -38,9 +35,9 @@ parts:
       - fastboot
       - android-libziparchive
       - libpython3-stdlib
-      - libpython3.10-minimal
-      - libpython3.10-stdlib
-      - python3.10-minimal
+      - libpython3.12-minimal
+      - libpython3.12-stdlib
+      - python3.12-minimal
     build-attributes:
       - enable-patchelf
 
