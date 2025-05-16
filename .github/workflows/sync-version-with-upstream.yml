@@ -1,10 +1,8 @@
-name: Update
+name: Sync Version
 
 on:
-  # Runs at 10:00 UTC every day
   schedule:
-    - cron:  '0 10 * * *'
-  # Allows you to run this workflow manually from the Actions tab
+    - cron: '0 10 * * *' 
   workflow_dispatch:
 
 concurrency:
@@ -12,21 +10,57 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  sync:
-    name: 🔄 Sync version with upstream
-    environment: "Candidate Branch"
+  sync-version:
+    name: 🔄 Sync Snap Version
     runs-on: ubuntu-latest
-    steps:
-      - name: 🔄 Sync version with upstream
-        uses: snapcrafters/ci/sync-version@main
-        with:
-          token: ${{ secrets.SNAPCRAFTERS_BOT_COMMIT }}
-          update-script: |
-            # Project ID for genio-tools upstream is from GitLab API: https://gitlab.com/api/v4/projects/mediatek%2Faiot%2Fbsp%2Fgenio-tools
-            GITLAB_API="https://gitlab.com/api/v4/projects/45680472/repository/tags"
-            
-            # Fetch the latest tag/version from GitLab API
-            VERSION=$(curl -s "${GITLAB_API}" | jq -r '.[0].name')
 
-            # Update the version in the snapcraft.yaml file
-            sed -i 's/^\(version: \).*$/\1'"$VERSION"'/' snap/snapcraft.yaml
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: master
+
+      - name: 🧰 Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq curl yq
+
+      - name: 🆕 Fetch latest upstream version
+        id: get_version
+        run: |
+          GITLAB_API="https://gitlab.com/api/v4/projects/45680472/repository/tags"
+          VERSION=$(curl -s "$GITLAB_API" | jq -r '.[0].name')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: 📝 Parse current version
+        id: parse_yaml
+        run: |
+          CURRENT_VERSION=$(yq -r '.version' snap/snapcraft.yaml)
+          echo "current=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+
+      - name: 🛠️ Run update script
+        run: |
+          NEW_VERSION="${{ steps.get_version.outputs.version }}"
+          sed -i "s/^version: .*/version: $NEW_VERSION/" snap/snapcraft.yaml
+
+      - name: 🔍 Check for modified files
+        id: git-check
+        run: |
+          MODIFIED=$([ -z "$(git status --porcelain)" ] && echo "false" || echo "true")
+          echo "modified=$MODIFIED" >> "$GITHUB_OUTPUT"
+
+      - name: ✅ Commit and push changes
+        if: steps.git-check.outputs.modified == 'true'
+        run: |
+          git config --global user.name "Tzu-Hsien Bot"
+          git config --global user.email "tzuhsien-kao@canonical.com"
+
+          OLD="${{ steps.parse_yaml.outputs.current }}"
+          NEW="${{ steps.get_version.outputs.version }}"
+
+          if [[ "$OLD" != "$NEW" ]]; then
+            git add snap/snapcraft.yaml
+            git commit -m "chore: bump snap version from $OLD to $NEW"
+            git push origin HEAD:master
+          fi

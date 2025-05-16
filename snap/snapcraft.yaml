@@ -25,9 +25,6 @@ parts:
     source: https://gitlab.com/mediatek/aiot/bsp/genio-tools.git
     source-type: git
     source-branch: main
-    override-pull: |
-      craftctl default
-      craftctl set version="$(git describe --tags --always)"
     build-packages:
       - python3-setuptools
       - python3-setuptools-scm
