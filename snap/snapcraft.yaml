@@ -1,5 +1,5 @@
 name: genio-tools
-version: git
+version: 1.6.2
 summary: Mediatek Genio Tools
 description: |
   Flash, control or configure MediaTek boards, and in particular the Genio evaluation kits
