@@ -17,7 +17,7 @@ base: core24
 environment:
   PATH: $SNAP/usr/bin:$SNAP/bin:$SNAP/sbin:$PATH
   PYTHONPATH: $SNAP/lib/python3.12/site-packages:$PYTHONPATH
-  LD_LIBRARY_PATH: $SNAP/usr/lib:$SNAP/lib
+  LD_LIBRARY_PATH: $SNAP/usr/lib:$SNAP/lib:$LD_LIBRARY_PATH
 
 parts:
   genio-tools:
@@ -30,7 +30,13 @@ parts:
       - python3-setuptools-scm
     stage-packages:
       - fastboot
+      - android-libbase
+      - android-libboringssl
+      - android-libcutils
+      - android-liblog
+      - android-libsparse
       - android-libziparchive
+      - libprotobuf32
       - libpython3-stdlib
       - libpython3.12-minimal
       - libpython3.12-stdlib
