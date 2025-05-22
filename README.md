@@ -22,3 +22,15 @@ distributions.</p>
 
 👉 **[Setup instructions on the Snap Store page](https://snapcraft.io/genio-tools)**  
 👉 **[Official Genio Tools documentation (MediaTek AIoT Dev Guide)](https://mediatek.gitlab.io/aiot/doc/aiot-dev-guide/master/tools/genio-tools.html)**
+
+## Licensing and Attribution
+
+This Snap package uses a template based on [Snapcrafters/template-snap](https://github.com/snapcrafters/template-snap), licensed under the MIT License.
+
+The included packaging scripts are under the MIT license, while the bundled application **Genio Tools** is developed and maintained by MediaTek, and is licensed under the **Apache License 2.0**.
+
+See the [upstream repository](https://gitlab.com/mediatek/aiot/bsp/genio-tools) for details.
+
+This Snap is **packaged by Canonical** for ease of installation and integration on Snap-enabled systems.
+
+It is **not officially maintained by MediaTek**.
