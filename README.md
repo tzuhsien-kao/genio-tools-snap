@@ -8,7 +8,7 @@
 boards, and in particular the Genio evaluation kits</i>. It works on Ubuntu, Fedora, Debian, and other major Linux
 distributions.</p>
 
-<p align="center">Published for <img src="https://raw.githubusercontent.com/anythingcodes/slack-emoji-for-techies/gh-pages/emoji/tux.png" align="top" width="24" /> with 💝 by Snapcrafters</p>
+<p align="center">Published for <img src="https://raw.githubusercontent.com/anythingcodes/slack-emoji-for-techies/gh-pages/emoji/tux.png" align="top" width="24" /> with 💝</p>
 
 ## Install
 
