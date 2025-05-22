@@ -48,7 +48,10 @@ parts:
     plugin: dump
     source: ./scripts
     organize:
+      install-udev-rules.sh: bin/install-udev-rules.sh
       setup.sh: bin/setup.sh
+      udev-script.sh: bin/udev-script.sh
+
 
 plugs:
   home:
@@ -88,5 +91,9 @@ apps:
   
   setup:
     command: bin/setup.sh
+    plugs:
+      - home
+  udev-script:
+    command: bin/udev-script.sh
     plugs:
       - home
