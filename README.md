@@ -2,6 +2,10 @@
   <img src="img/MediaTek_20Genio_Black_20Vertical_200222.png" alt="Mediatek Genio Tools">
   <br />
   Mediatek Genio Tools
+  <br />
+  <a href="https://snapcraft.io/genio-tools">
+    <img src="https://snapcraft.io/genio-tools/badge.svg" alt="Snap Status" />
+  </a>
 </h1>
 
 <p align="center"><b>This is the snap for <a href="https://gitlab.com/mediatek/aiot/bsp/genio-tools">Mediatek Genio Tools</a></b>, <i>a set of tools to flash, control or configure MediaTek
@@ -18,7 +22,7 @@ distributions.</p>
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
-## Setup
+## Setup, Usage
 
 👉 **[Setup instructions on the Snap Store page](https://snapcraft.io/genio-tools)**  
 👉 **[Official Genio Tools documentation (MediaTek AIoT Dev Guide)](https://mediatek.gitlab.io/aiot/doc/aiot-dev-guide/master/tools/genio-tools.html)**
