@@ -17,3 +17,8 @@ distributions.</p>
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/genio-tools)
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
+
+## Setup
+
+👉 **[Setup instructions on the Snap Store page](https://snapcraft.io/genio-tools)**  
+👉 **[Official Genio Tools documentation (MediaTek AIoT Dev Guide)](https://mediatek.gitlab.io/aiot/doc/aiot-dev-guide/master/tools/genio-tools.html)**
