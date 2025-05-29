@@ -46,7 +46,7 @@ parts:
     
   genio-setup:
     plugin: dump
-    source: ./scripts
+    source: ./snap/scripts
     organize:
       install-udev-rules.sh: bin/install-udev-rules.sh
       setup.sh: bin/setup.sh
