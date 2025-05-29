@@ -1,7 +1,7 @@
 # scripts/install-udev-rules.sh
 #!/bin/bash
 
-RULE_FILE="/etc/udev/rules.d/72-aiot.rules"
+RULE_FILE="/etc/udev/rules.d/72-genio.rules"
 
 echo "🔧 Installing udev rule for your USB device..."
 
